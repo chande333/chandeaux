@@ -1,0 +1,35 @@
+<html>
+  <!-- ####################### CONTENT 1 ####################### -->
+  <!-- ####################### HTML5 ####################### -->
+
+  <div class="displays" id="div3">  
+       <h1>
+         CONTENT TITLE
+       </h1>
+       <p><a id="click100" onClick="open_content(this.id)">SHOW</a></p>
+       <div id="content100" class="content" style="display:none;">
+        Place the content here
+       </div>          
+  </div>
+
+  <!-- ####################### END OF CONTENT 1 ####################### -->
+  
+  
+<script>
+function open_content(y) {
+	x=y.substr(-3,3)
+	console.log(x);
+	if (document.getElementById('content'+x).style.display=='none'){
+		document.getElementById('click'+x).innerHTML="CLOSE";
+		document.getElementById('content'+x).style.display='block';
+		document.getElementById('video'+x).load();
+		document.getElementById('video'+x).play();
+	}
+	else {
+		document.getElementById('click'+x).innerHTML="SHOW";
+		document.getElementById('content'+x).style.display='none';
+	}
+}
+</script>
+
+</html>
