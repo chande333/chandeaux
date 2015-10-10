@@ -5,12 +5,12 @@
   <div class="displays" id="div3">  
   	<div class="levels"> <!-- Places a border around the content-->
        		<h2>CONTENT TITLE</h2>
-       		<p><a id="click100" onClick="open_content(this.id)">SHOW</a></p>
-       		<div id="content100" class="content" style="display:none;">
+       		<p><a onClick="open_content(this)">SHOW</a></p>
+       		<div class="content" style="display:none;">
        			<div class="subitem"> 
        				<h3>Sub Title</h3>
-       				<p><a id="click101" onClick="open_content(this.id)">SHOW</a></p>
-          			<div id="content101" class="content" style="display:none;">
+       				<p><a onClick="open_content(this.id)">SHOW</a></p>
+          			<div class="content" style="display:none;">
        				<p>Place content here</p>
        				</div>
        			</div>
@@ -50,18 +50,16 @@
   
 <script>
 function open_content(y) {
-	x=y.substr(-3,3)
-	console.log(x);
-	if (document.getElementById('content'+x).style.display=='none'){
-		document.getElementById('click'+x).innerHTML="CLOSE";
-		document.getElementById('content'+x).style.display='block';
-		document.getElementById('video'+x).load();
-		document.getElementById('video'+x).play();
-	}
-	else {
-		document.getElementById('click'+x).innerHTML="SHOW";
-		document.getElementById('content'+x).style.display='none';
-	}
+	var x = y.parentElement // The use of this was explained in a question I asked http://stackoverflow.com/questions/33055829/how-to-target-the-next-div-element
+	var contentElement = x.nextElementSibling;
+	//console.log(x.nextElementSibling.id);
+    if (contentElement.style.display == 'none') {
+        y.innerHTML = "CLOSE";
+        contentElement.style.display = 'block';
+    } else {
+        y.innerHTML = "SHOW";
+        contentElement.style.display = 'none';
+    }
 }
 </script>
 
