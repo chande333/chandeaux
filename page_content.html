@@ -3,13 +3,19 @@
   <!-- ####################### HTML5 ####################### -->
 
   <div class="displays" id="div3">  
-       <h1>
-         CONTENT TITLE
-       </h1>
-       <p><a id="click100" onClick="open_content(this.id)">SHOW</a></p>
-       <div id="content100" class="content" style="display:none;">
-        Place the content here
-       </div>          
+  	<div class="levels"> <!-- Places a border around the content-->
+       		<h2>CONTENT TITLE</h2>
+       		<p><a id="click100" onClick="open_content(this.id)">SHOW</a></p>
+       		<div id="content100" class="content" style="display:none;">
+       			<div class="subitem"> 
+       				<h3>Sub Title</h3>
+       				<p><a id="click101" onClick="open_content(this.id)">SHOW</a></p>
+          			<div id="content101" class="content" style="display:none;">
+       				<p>Place content here</p>
+       			</div>
+		 Place the content here
+       		</div>  
+       </div>
   </div>
 
   <!-- ####################### END OF CONTENT 1 ####################### -->
